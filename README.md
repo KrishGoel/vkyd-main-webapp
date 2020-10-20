@@ -1,16 +1,11 @@
-# VKYD Svelte App
-> Deployed on [Vercel](https://vkyd.vercel.app)
+# VKYD Main Webapp
+> Wick3d ( _/ˈwɪkɪd/_ )
 
-## Notes to self
-- The app is failing with Stylus, fix it or don't use
-- Pug doesn't gel well either lmao
-- Vercel automatically deploys all successfully built commits
-- **Before deployment**
+**🌐 VKYD's main webapp built on Svelte.JS and Snipcart**
 
-    ```$ npm run build```
+![DUB](https://img.shields.io/dub/l/vibe-d?label=License)
 
-- **Notes for continuing**
-    The topnav needs to make made in the table format, the markup is done. Fix the styling
+Check out this badboy at **[vkyd.in](https://vkyd.in)**.
 
-
-> LmAoOnbijjb
+### License
+Licensed under the MIT License.
