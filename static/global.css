@@ -1,35 +1,43 @@
 /* Font imports */
-
 @font-face {
 	font-family: Plateia;
-	src: url("fonts/Plateia-Bold.ttf");
+	src: url("https://lcfr.vkyd.in/fonts/Plateia-Bold.ttf");
 }
 
 @font-face {
 	font-family: Poppins;
 	font-weight: 400;
-	src: url("fonts/Poppins-Regular.ttf");
+	src: url("https://lcfr.vkyd.in/fonts/Poppins-Regular.ttf");
 }
 
 @font-face {
 	font-family: Poppins;
 	font-weight: 400;
 	font-style: italic;
-	src: url("fonts/Poppins-Italic.ttf");
+	src: url("https://lcfr.vkyd.in/fonts/Poppins-Italic.ttf");
 }
 
 @font-face {
 	font-family: Poppins;
 	font-weight: 700;
-	src: url("fonts/Poppins-Bold.ttf");
+	src: url("https://lcfr.vkyd.in/fonts/Poppins-Bold.ttf");
+}
+
+/* Variables */
+:root {
+	/* Core tones */
+	--dark-smoke: #1D2022;
+	--text-gray: #AAAAAA;
+	--almost-white: #F8F8F8;
+
+/* Pastels */
+	--hot-pink: #E8026A
 }
 
 /* Responsive font sizing */
-
 h1 {
 	font-size: calc(1.375rem + 1.5vw)
 }
-
 @media screen and (min-width: 1200px) {
 	h1 {
 		font-size: 2.5rem;
@@ -87,15 +95,17 @@ p {
 a {
 	text-decoration: none;
 }
-/* General body CSS */
 
+/* General body CSS */
 body {
 	margin: 0;
 	padding: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	background-color: var(--dark-smoke);
 	font-family: Poppins;
 	font-weight: 400;
-	margin-block-start: 0;
-	margin-block-end: 0
+	color: var(--text-gray)
 }
 
 h1, h2, h3, h4, h5, h6 {

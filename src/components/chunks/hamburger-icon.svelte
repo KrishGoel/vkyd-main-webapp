@@ -15,7 +15,7 @@
     .hamburger-icon-bar {
         width: 25px;
         height: 4px;
-        background-color: #000000;
+        background-color: var(--text-gray);
         border-radius: 5px;
         transition: 0.2s;
     }
