@@ -1,7 +1,6 @@
 <script>
     import { slide } from 'svelte/transition';
     import { fade } from 'svelte/transition';
-    import Headroom from "svelte-headroom";
     import { clickOutside } from '../components/mini-js/clickOutside.js';
 
     import HamburgerIcon from '../components/chunks/hamburger-icon.svelte';
@@ -18,20 +17,20 @@
 </script>
 
 <nav>
-    <Headroom offset={100} tolerance={5}>
-        <div class="top-nav">
-            <div class="width-restriction">
-                <div id="hamburger-icon" on:click={openSidenav}>
-                    <HamburgerIcon />
-                </div>
-                <!-- <h1 class="head" id="logo">VKYD</h1> -->
-                <img src="{cdn}/logos/vkyd-logo.svg" alt="VKYD Logo"/>
-                <div id="shopping-cart-icon">
-                    <img src="{cdn}/icons/website/shopping-bag.png" alt="Shopping Cart">
-                </div>
+    <!-- <Headroom offset={100} tolerance={5}> -->
+    <div class="top-nav">
+        <div class="width-restriction">
+            <div id="hamburger-icon" on:click={openSidenav}>
+                <HamburgerIcon />
+            </div>
+            <!-- <h1 class="head" id="logo">VKYD</h1> -->
+            <img src="{cdn}/logos/vkyd-logo.svg" alt="VKYD Logo"/>
+            <div id="shopping-cart-icon">
+                <img src="{cdn}/icons/website/shopping-bag.png" alt="Shopping Cart">
             </div>
         </div>
-    </Headroom>
+    </div>
+    <!-- </Headroom> -->
     {#if sidenavState}
         <div class="side-nav" use:clickOutside transition:slide='{{duration: 500}}' on:click_outside={closeSidenav}>
             <div id="close-icon" on:click={closeSidenav}>
@@ -76,10 +75,13 @@
         background: linear-gradient(266.6deg, #1F2224 46.48%, #1A1D1F 61.97%);
         box-shadow: 14px 14px 50px 10px #0C0D0E, inset 14px 14px 10px rgba(46, 51, 54, 0.2);
         border-radius: 20px;
-        /* position: fixed; */
-        margin-left: 2.5vw;
+        position: fixed;
+        left: 2.5vw;
+        right: 2.5vw;
+        top: 2.5vw;
+        /* margin-left: 2.5vw;
         margin-right: 2.5vw;
-        margin-top: 2.5vw;
+        margin-top: 2.5vw; */
         padding: 10px 0;
     }    
     .top-nav .width-restriction {
