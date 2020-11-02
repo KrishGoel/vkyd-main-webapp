@@ -70,18 +70,21 @@
 
 <style>
     /* Purely topnav styling */
+    :root {
+        --topnav-width: 95vw;
+    }
     .top-nav {
-        width: 95%;
-        background: linear-gradient(266.6deg, #1F2224 46.48%, #1A1D1F 61.97%);
-        box-shadow: 14px 14px 50px 10px #0C0D0E, inset 14px 14px 10px rgba(46, 51, 54, 0.2);
-        border-radius: 20px;
+        width: var(--topnav-width);
         position: fixed;
-        left: 2.5vw;
-        right: 2.5vw;
-        top: 2.5vw;
+        left: calc((100vw - var(--topnav-width))/2);
+        top: calc((100vw - var(--topnav-width))/2);
+        z-index: 1;
         /* margin-left: 2.5vw;
         margin-right: 2.5vw;
         margin-top: 2.5vw; */
+        background: linear-gradient(266.6deg, #1F2224 46.48%, #1A1D1F 61.97%);
+        box-shadow: 14px 14px 50px 10px #0C0D0E, inset 14px 14px 10px rgba(46, 51, 54, 0.2);
+        border-radius: 20px;
         padding: 10px 0;
     }    
     .top-nav .width-restriction {
@@ -89,7 +92,7 @@
 		justify-content: space-between;
 		align-items: center;
     }
-
+    
     /* Element specific styling */
     .top-nav #shopping-cart-icon img {
         width: 22px

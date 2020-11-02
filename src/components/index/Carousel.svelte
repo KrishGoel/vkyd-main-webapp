@@ -43,11 +43,14 @@
 
 <style>
     :root {
-        --carousel-height: 250px;
+        --carousel-height-large-screen: 200px;
+        --carousel-height-small-screen: 150px;
+        --scroll-time-large-screen: 20s;
+        --scroll-time-small-screen: 10s;
         --carouself-border-radius: 20px
     }
     .carousel {
-        height: var(--carousel-height);
+        height: var(--carousel-height-large-screen);
         position: relative; 
         overflow: hidden;
         border-radius: var(--carouself-border-radius)
@@ -58,16 +61,25 @@
         left: 0px; 
         overflow: hidden; 
         white-space: nowrap;
-        animation: bannermove 20s linear infinite;
+        animation: bannermove var(--scroll-time-large-screen) linear infinite;
     }
     .slide {
-        display: inline
+        display: inline;
+        border-radius: var(--carouself-border-radius);
     }
     .slide img {
-        height: var(--carousel-height);
+        height: var(--carousel-height-large-screen);
         border-radius: var(--carouself-border-radius);
         margin-left: 30px
-    }    
+    }
+    @media screen and (max-width: 400px) {
+        .slides {
+            animation: bannermove var(--scroll-time-small-screen) linear infinite;
+        }
+        .carousel, .slide img {
+            height: var(--carousel-height-small-screen)
+        }
+    }
     @keyframes bannermove {
         0% {
             transform: translate(0, 0);
