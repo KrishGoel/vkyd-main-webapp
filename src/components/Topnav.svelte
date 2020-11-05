@@ -8,7 +8,7 @@
 
     const cdn = "https://lcfr.vkyd.in";
 
-    var sidenavState = true;
+    var sidenavState = false;
     function openSidenav() {
 		sidenavState = true;
 	}
