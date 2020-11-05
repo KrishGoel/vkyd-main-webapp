@@ -1,91 +1,83 @@
 <script>
+
     let cdn = "https://lcfr.vkyd.in"
 
     let slides = [
 		{
             url: '/lol',
             label: 'lolol',
-            src: 'https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg',
+            src: 'https://dvyvvujm9h0uq.cloudfront.net/com/articles/1514474020-tips-for-aspiring-fashion-models.jpg',
             alt: 'lololol'
         },
         {
             url: '/lol',
             label: 'lolol',
-            src: 'https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg',
+            src: 'https://i.pinimg.com/736x/b8/ea/d7/b8ead72eb31d8918095e83b4fa4cc19e.jpg',
             alt: 'lololol'
         },
         {
             url: '/lol',
             label: 'lolol',
-            src: 'https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg',
+            src: 'https://i.pinimg.com/736x/10/a4/8f/10a48fe898aeba869e9180dcdfb6105d.jpg',
             alt: 'lololol'
         },
         {
             url: '/lol',
             label: 'lolol',
-            src: 'https://www.nationalgeographic.com/content/dam/travel/2019-digital/yosemite-guide/yosemite-national-park-california.jpg',
+            src: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/0414-hoodie-2-1586901031.jpg',
             alt: 'lololol'
         }
-	];
+    ];
+
+    let slidesCount = slides.length;
+
 </script>
 
 <div class="carousel">
-    <div class="slides">
-        {#each slides as slide}
-            <div class="slide">
+    {#each slides as slide, i}
+        <div class="slide">
+            {#if i > 0}
+                <a href="{slide.url}" aria-label="{slide.label}" style="margin-left: 15px">
+                    <img src="{slide.src}" alt="{slide.alt}" />
+                </a>
+            {:else}
                 <a href="{slide.url}" aria-label="{slide.label}">
                     <img src="{slide.src}" alt="{slide.alt}" />
                 </a>
-            </div>
-        {/each}
-    </div>
+            {/if}            
+        </div>
+    {/each}
 </div>
 
 <style>
     :root {
-        --carousel-height-large-screen: 200px;
-        --carousel-height-small-screen: 150px;
-        --scroll-time-large-screen: 20s;
-        --scroll-time-small-screen: 10s;
-        --carouself-border-radius: 20px
+        --carousel-lg-height: 300px; /* Carousel height for large devices */
+        --carousel-xs-height: 300px; /* Carousel height for small devices */
+        --carousel-border-radius: 20px;
     }
     .carousel {
-        height: var(--carousel-height-large-screen);
-        position: relative; 
-        overflow: hidden;
-        border-radius: var(--carouself-border-radius)
-    }
-    .slides {
-        position: absolute; 
-        top: 0px; 
-        left: 0px; 
-        overflow: hidden; 
+        width: 100%;
         white-space: nowrap;
-        animation: bannermove var(--scroll-time-large-screen) linear infinite;
+        overflow-x: scroll;
+        border-radius: var(--carousel-border-radius);
+        /* Hiding x-scroll on IE, Edge and Firefox*/
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    /* Hiding x-scroll on Chrome, Opera and Safari*/
+    .carousel::-webkit-scrollbar {
+        display: none;
     }
     .slide {
-        display: inline;
-        border-radius: var(--carouself-border-radius);
+        display: inline-block;
     }
-    .slide img {
-        height: var(--carousel-height-large-screen);
-        border-radius: var(--carouself-border-radius);
-        margin-left: 30px
+    .slide img{
+        height: var(--carousel-lg-height);
+        border-radius: var(--carousel-border-radius);
     }
     @media screen and (max-width: 400px) {
-        .slides {
-            animation: bannermove var(--scroll-time-small-screen) linear infinite;
-        }
-        .carousel, .slide img {
-            height: var(--carousel-height-small-screen)
-        }
-    }
-    @keyframes bannermove {
-        0% {
-            transform: translate(0, 0);
-        }
-        100% {
-            transform: translate(-50%, 0);
+        .slide img {
+            height: var(--carousel-xs-height);
         }
     }
 </style>

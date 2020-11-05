@@ -4,10 +4,11 @@
     import { clickOutside } from '../components/mini-js/clickOutside.js';
 
     import HamburgerIcon from '../components/chunks/hamburger-icon.svelte';
+    import CloseIcon from '../components/chunks/close-icon.svelte';
 
     const cdn = "https://lcfr.vkyd.in";
 
-    var sidenavState = false;
+    var sidenavState = true;
     function openSidenav() {
 		sidenavState = true;
 	}
@@ -34,7 +35,7 @@
     {#if sidenavState}
         <div class="side-nav" use:clickOutside transition:slide='{{duration: 500}}' on:click_outside={closeSidenav}>
             <div id="close-icon" on:click={closeSidenav}>
-                <img src="{cdn}/icons/website/close.png" alt="Close side navigation bar">
+                <CloseIcon/>
             </div>
             <br><br><br><br><br><br>
             <div id="links">
@@ -121,10 +122,10 @@
             width: 100vw;
         }
     }
-    .side-nav #close-icon img {
+    .side-nav #close-icon {
         width: 22px;
         position: absolute;
-        top: calc(2.5vw + 25px);
+        top: calc(2.5vw + 30px);
         left: calc(2.5vw + 0.05*95vw)
     }
     
